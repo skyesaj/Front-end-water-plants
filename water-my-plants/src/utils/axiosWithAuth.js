@@ -7,7 +7,7 @@ export const getToken = () => {
 export const axiosWithAuth = () => {
     return axios.create({
         //config object, will need to update this to our baseURL herokuapp from backend
-        baseURL: 'https://',
+        baseURL: 'https://wmp3.herokuapp.com/api',
         headers: {
             Authorization: localStorage.getItem('token')
         }
