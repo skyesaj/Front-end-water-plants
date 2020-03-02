@@ -22,35 +22,31 @@ const Navigation = (props) => {
   return (
     <div>
       <Navbar color="light" light expand="md">
-        <NavbarBrand href="/">reactstrap</NavbarBrand>
+        <NavbarBrand href="/">Water My Plants</NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar>
             <NavItem>
-              <NavLink href="/components/">Components</NavLink>
+              <NavLink href="/components/">Login</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="https://github.com/reactstrap/reactstrap">GitHub</NavLink>
+              <NavLink href="https://github.com/reactstrap/reactstrap">Sign Up</NavLink>
             </NavItem>
             <UncontrolledDropdown nav inNavbar>
               <DropdownToggle nav caret>
-                Options
+                My Plants
               </DropdownToggle>
               <DropdownMenu right>
                 <DropdownItem>
-                  Option 1
+                  List of My Plants
                 </DropdownItem>
                 <DropdownItem>
-                  Option 2
-                </DropdownItem>
-                <DropdownItem divider />
-                <DropdownItem>
-                  Reset
+                  Add New Plant
                 </DropdownItem>
               </DropdownMenu>
             </UncontrolledDropdown>
           </Nav>
-          <NavbarText>Simple Text</NavbarText>
+          <NavbarText>Always Reminding You To Water Your Plants!</NavbarText>
         </Collapse>
       </Navbar>
     </div>
