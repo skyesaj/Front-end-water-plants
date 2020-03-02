@@ -30,7 +30,9 @@ const Navigation = (props) => {
               <NavLink href="/login">Login</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="/signup">Sign Up</NavLink>
+
+              <NavLink href="/register">Sign Up</NavLink>
+
             </NavItem>
             <UncontrolledDropdown nav inNavbar>
               <DropdownToggle nav caret>
