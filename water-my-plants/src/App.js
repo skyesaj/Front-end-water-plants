@@ -21,7 +21,7 @@ function App() {
         <ProtectedRoute path='/protected' component={Plants} />
         <ProtectedRoute path='/protected' component={PlantPage} />
       </Switch> */}
-      <Route path="/signup" component={Signup}/>
+      <Route path="/register" component={Signup}/>
       <Route path="/login" component={Login}/>
     </div>
   );
