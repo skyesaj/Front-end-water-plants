@@ -20,6 +20,7 @@ function App() {
         <Navigation />
       </header>
     {/* Switch and routes here as well as Protected Routes with Token Authentication */}
+
       <Switch>
         <ProtectedRoute path='/protected'  component={Plants}/>
         <ProtectedRoute path='/users/:id/plants' component={Plants} />
@@ -29,7 +30,7 @@ function App() {
         <Route path="/register" component={Signup}/>
         <Route path="/login" component={Login}/>
       </Switch>
-      
+
     </div>
   );
 }
