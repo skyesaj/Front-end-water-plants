@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import axiosWithAuth from '../utils/axiosWithAuth';
 import { PlantContext } from '../utils/context';
 import ListPlants from './ListPlants';
@@ -8,6 +8,7 @@ const Plants = props => {
     const {id} = useParams();
     const [plants, setPlants] = useState();
     const [users, setUsers] = useState();
+    
     useEffect(() => {
         axiosWithAuth()
         .get(`/users/${id}/plants`)
