@@ -30,7 +30,7 @@ const Navigation = (props) => {
               <NavLink href="/login">Login</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="/register">Sign Up</NavLink>
+              
 
               <NavLink href="/register">Sign Up</NavLink>
 
