@@ -1,6 +1,5 @@
 import React from 'react';
 import axiosWithAuth from '../utils/axiosWithAuth';
-import classes from '*.module.css';
 
 const PlantCard = props => {
     

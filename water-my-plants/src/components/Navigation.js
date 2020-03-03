@@ -36,14 +36,14 @@ const Navigation = (props) => {
 
             </NavItem>
             <UncontrolledDropdown nav inNavbar>
-              <DropdownToggle nav caret>
+              <DropdownToggle nav caret >
                 My Plants
               </DropdownToggle>
               <DropdownMenu right>
-                <DropdownItem>
+                <DropdownItem href="/users/1/plants">
                   List of My Plants
                 </DropdownItem>
-                <DropdownItem>
+                <DropdownItem href="/plantform">
                   Add New Plant
                 </DropdownItem>
               </DropdownMenu>

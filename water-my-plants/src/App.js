@@ -1,5 +1,11 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Link, Switch } from 'react-router-dom';
+import ProtectedRoute from './utils/ProtectedRoute';
+// import PlantPage from './Component/PlantPage';
+import Plants from './components/Plants';
+import PlantForm from './components/PlantForm';
+import PlantCard from './components/PlantCard';
+import UpdatePlantForm from './components/UpdatePlantForm';
 
 import Navigation from './components/Navigation';
 import Signup from "./components/SignUp";
@@ -12,17 +18,19 @@ function App() {
     <div className="App">
       <header className="NavBar">
         <Navigation />
-        
       </header>
-
     {/* Switch and routes here as well as Protected Routes with Token Authentication */}
-      {/* <Switch>
-        <ProtectedRoute path='/protected' component={PlantPage} />
-        <ProtectedRoute path='/protected' component={Plants} />
-        <ProtectedRoute path='/protected' component={PlantPage} />
-      </Switch> */}
-      <Route path="/register" component={Signup}/>
-      <Route path="/login" component={Login}/>
+
+      <Switch>
+        <ProtectedRoute path='/protected'  component={Plants}/>
+        <ProtectedRoute path='/users/:id/plants' component={Plants} />
+        <Route exact path='/plantform' component={PlantForm}/>
+        <ProtectedRoute exact path='plantcard' component={PlantCard} />
+        <Route path='/update-plant/:id' component={UpdatePlantForm} />
+        <Route path="/register" component={Signup}/>
+        <Route path="/login" component={Login}/>
+      </Switch>
+
     </div>
   );
 }
