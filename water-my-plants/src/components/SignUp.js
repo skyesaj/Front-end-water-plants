@@ -86,9 +86,11 @@ const signUp = e => {
       />
       
 
+       
      
-
-      <Button variant="contained" color="primary" type="submit">Submit</Button>
+     
+     
+      <Button variant="contained" color="primary" onClick = {signUp} type="submit">Submit</Button>
     </form>
     </Main1>
   );
