@@ -15,6 +15,7 @@ import * as Yup from 'yup';
       username: '',
       password: ''
   })
+
   const { register, handleSubmit, errors } = useForm();
 //   const onSubmit = data => console.log(data);
   console.log(errors);
@@ -45,16 +46,19 @@ import * as Yup from 'yup';
     axiosWithAuth()
       .post('/auth/login', user)
       .then(res => {
-          console.log(res)
+          console.log('login response: ', res)
         localStorage.setItem("token", res.data.token);
-         props.history.push("/plants");
+        localStorage.setItem('id', JSON.stringify(res.data.user_id))
+         props.history.push(`/users/${res.data.user_id}/plants`);
 
          let welcomeMessage = res.data.message;
-         axiosWithAuth().get("/users")
+         console.log('welcome message', welcomeMessage)
+         axiosWithAuth()
+        .get("/users")
           .then(res => {
            let user = res.data.filter(user=>welcomeMessage.includes(user.username))
            console.log('login props', props);
-           props.history.push(`/users/${user[0].id}/plants`)
+           props.history.push(`/users/${user[-4].id}/plants`)
          })
           .catch(err => console.log(err))
       })

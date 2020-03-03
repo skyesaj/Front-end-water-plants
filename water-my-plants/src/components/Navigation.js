@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useParams } from 'react-router-dom';
 import {
   Collapse,
   Navbar,
@@ -15,6 +16,7 @@ import {
 } from 'reactstrap';
 
 const Navigation = (props) => {
+  const { id } = useParams();
   const [isOpen, setIsOpen] = useState(false);
 
   const toggle = () => setIsOpen(!isOpen);
@@ -40,7 +42,7 @@ const Navigation = (props) => {
                 My Plants
               </DropdownToggle>
               <DropdownMenu right>
-                <DropdownItem href="/users/1/plants">
+                <DropdownItem href={`/users/${id}/plants`}>
                   List of My Plants
                 </DropdownItem>
                 <DropdownItem href="/plantform">
