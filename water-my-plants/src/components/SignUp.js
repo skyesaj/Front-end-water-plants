@@ -63,7 +63,7 @@ const signUp = e => {
          })
           .catch(err => console.log(err))
       })
-      .catch(err => console.log(err));
+      .catch(err => console.log("Wrong user info, error code: ", err));
   };
 
   

@@ -20,12 +20,14 @@ const Plants = props => {
     useEffect(() => {
         axiosWithAuth()
         .get(`/users/${id}/plants`)
-        .then(res => {
-            setPlants(res.data);
-            console.log(res);
-        })
-        .catch(err => console.log(err));
-    }, []);
+          .then(res => {
+              console.log(' this is plants.js response: ', res)
+                setPlants(res.data);
+     })
+          .catch(err => console.log(err))
+    }, [])
+
+       
 
     useEffect(() => {
         axiosWithAuth()
