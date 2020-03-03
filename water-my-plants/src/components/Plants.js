@@ -24,7 +24,7 @@ const Plants = props => {
         .get('/users')
         .then(res => {
             setUsers(res.data);
-            localStorage.setItem('users res: ', res.data);
+            console.log('users res: ', res.data);
         })
         .catch(err => console.log(err));
     }, []);

@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import axiosWithAuth from '../utils/axiosWithAuth';
+import { useParams } from 'react-router-dom';
 
 const PlantForm = ({history}) => {
+    const {id} = useParams();
     const [add, setAdd] = useState({
         nickname: '',
         species: '',
@@ -18,10 +20,10 @@ const PlantForm = ({history}) => {
 
     const addPlant = () => {
         axiosWithAuth()
-        .post(`/users/1/plants`, add)
+        .post(`/users/${id}/plants`, add)
         .then(res => {
             setAdd(res.data);
-            history.pushState('/users/1/plants');
+            history.pushState('/users/${id}/plants');
         })
         .catch(err => console.log(err))
     };
