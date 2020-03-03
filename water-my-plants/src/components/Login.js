@@ -34,3 +34,30 @@ const Login = () => {
 }
 
 export default Login;
+
+
+// From Arash Haji-Hassanzadeh to Everyone:  12:17 PM
+// login = e => {
+//     e.preventDefault();
+    
+//     axiosWithAuth()
+//       .post(
+//         "/auth/register”,
+//         this.state.credentials
+//       )
+//       .then(res => {
+//           console.log(res)
+//         localStorage.setItem("token", res.data.token);
+//          this.props.history.push("/plants");
+
+//          let welcomeMessage = res.data.message;
+//          axiosWithAuth().get("/users")
+//           .then(res => {
+//            let user = res.data.filter(user=>welcomeMessage.includes(user.username))
+//            console.log('login props', this.props);
+//            this.props.history.push(`/users/${user[0].id}/plants`)
+//          })
+//           .catch(err => console.log(err))
+//       })
+//       .catch(err => console.log(err));
+//   };
