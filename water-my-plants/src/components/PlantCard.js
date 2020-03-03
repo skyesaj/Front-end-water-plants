@@ -1,6 +1,13 @@
 import React from 'react';
 import axiosWithAuth from '../utils/axiosWithAuth';
+import styled from "styled-components";
 
+const PlantContainer = styled.div `
+  background: #608EFF;  
+  font-family: 'Montserrat';
+  height: 100vh;
+  
+  `
 const PlantCard = props => {
     
     console.log('plantcard props: ', props)
@@ -26,7 +33,7 @@ const PlantCard = props => {
 
     return (
 
-        <div className='plant-container' >
+        <PlantContainer className='plant-container' >
             <div className='plant-page'>
                 <div key={props.plants.id} className="plant-card">
                     <h1>Plant Nickname: {props.plants.nickname}</h1>
@@ -41,7 +48,7 @@ const PlantCard = props => {
                     
                 </div>
             </div>
-        </div>
+        </PlantContainer>
     )
 }
 

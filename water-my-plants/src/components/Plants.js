@@ -3,6 +3,14 @@ import axiosWithAuth from '../utils/axiosWithAuth';
 import { PlantContext } from '../utils/context';
 import ListPlants from './ListPlants';
 import { useParams } from 'react-router-dom';
+import styled from "styled-components";
+
+const PlantContainer = styled.div `
+  background: #608EFF;  
+  font-family: 'Montserrat';
+  height: 100vh;
+  
+  `
 
 const Plants = props => {
     const {id} = useParams();
@@ -24,18 +32,18 @@ const Plants = props => {
         .get('/users')
         .then(res => {
             setUsers(res.data);
-            localStorage.setItem('users res: ', res.data);
+            console.log('users res: ', res.data);
         })
         .catch(err => console.log(err));
     }, []);
 
     return (
         <>
-            <div>
+            <PlantContainer>
                 <PlantContext.Provider value={plants}>
                     <ListPlants setPlants={setPlants} id={id} history={props.history}/>
                 </PlantContext.Provider>
-            </div>
+            </PlantContainer>
         </>
     );
 };
