@@ -56,7 +56,7 @@ const PlantForm = ({history}) => {
             <form className='forms' onSubmit={handleSubmit}>
             <Header1 className="header">
                 <img src={plant}/>
-                <h1 className = "title">Create an Account!</h1>
+                <h1 className = "title">Add a New Plant!</h1>
             </Header1>
                 
                 <input className="each" type='text' id='nickname' placeholder="nickname" name='nickname' value={add.nickname} onChange={handleChange}/>
