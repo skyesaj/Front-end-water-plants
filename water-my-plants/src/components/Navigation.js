@@ -21,6 +21,9 @@ const Navigation = (props) => {
 
   const toggle = () => setIsOpen(!isOpen);
 
+  const newId = localStorage.getItem('id')
+  console.log('this is the id from local storage', newId);
+
   return (
     <div>
       <Navbar color="light" light expand="md">
@@ -42,10 +45,10 @@ const Navigation = (props) => {
                 My Plants
               </DropdownToggle>
               <DropdownMenu right>
-                <DropdownItem href={`/users/${id}/plants`}>
+                <DropdownItem href={`/users/${newId}/plants`}>
                   List of My Plants
                 </DropdownItem>
-                <DropdownItem href="/plantform">
+                <DropdownItem href={`/users/${newId}/plantform`}>
                   Add New Plant
                 </DropdownItem>
               </DropdownMenu>

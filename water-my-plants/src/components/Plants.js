@@ -31,13 +31,15 @@ const Plants = props => {
 
     useEffect(() => {
         axiosWithAuth()
-        .get('/users')
+        .get(`/users/${id}`)
         .then(res => {
             setUsers(res.data);
             console.log('users res: ', res.data);
         })
         .catch(err => console.log(err));
     }, []);
+
+    
 
     return (
         <>

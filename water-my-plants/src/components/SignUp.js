@@ -59,21 +59,48 @@ const signUp = e => {
     axiosWithAuth()
       .post('/auth/register', user)
       .then(res => {
-          console.log(res)
+          console.log('register response: ', res)
         localStorage.setItem("token", res.data.token);
-         props.history.push("/plants");
+        localStorage.setItem('id', JSON.stringify(res.data.user_id))
+        // setUserId(res.data.user_id)
+         setTimeout(() => props.history.push('/login'
+            //  `/users/${res.data.user_id}/plants`
+             ), 2000);
 
          let welcomeMessage = res.data.message;
-         axiosWithAuth().get("/users")
-          .then(res => {
-           let user = res.data.filter(user=>welcomeMessage.includes(user.username))
-           console.log('login props', props);
-           props.history.push(`/users/${user[0].id}/plants`)
-         })
-          .catch(err => console.log(err))
+         console.log('welcome message', welcomeMessage)
+        //  axiosWithAuth()
+        // .get("/users")
+        //   .then(res => {
+        //    let user = res.data.filter(user=>welcomeMessage.includes(user.username))
+        //    console.log('login props', props);
+        //    props.history.push(`/users/${userId}/plants`)
+        //  })
+        //   .catch(err => console.log(err))
       })
-      .catch(err => console.log("Wrong user info, error code: ", err));
+      .catch(err => console.log(err));
   };
+
+//     e.preventDefault();
+    
+//     axiosWithAuth()
+//       .post('/auth/register', user)
+//       .then(res => {
+//           console.log(res)
+//         localStorage.setItem("token", res.data.token);
+//          props.history.push("/plants");
+
+//          let welcomeMessage = res.data.message;
+//          axiosWithAuth().get("/users")
+//           .then(res => {
+//            let user = res.data.filter(user=>welcomeMessage.includes(user.username))
+//            console.log('login props', props);
+//            props.history.push(`/users/${user[0].id}/plants`)
+//          })
+//           .catch(err => console.log(err))
+//       })
+//       .catch(err => console.log("Wrong user info, error code: ", err));
+//   };
 
   
   return (
