@@ -10,14 +10,7 @@ const PlantCard = props => {
         .delete(`/plants/${props.plants.id}`)
         .then(res => {
             console.log('delete plants res: ', res)
-            axiosWithAuth()
-            .get(`users/${props.id}/plants`)
-            .then(res => {
-                props.setPlants(res.data);
-            })
-            .catch(err => {
-                console.log(err)
-            })
+            props.history.push('/plants')
         })
         .catch(err => {
             console.log(err)

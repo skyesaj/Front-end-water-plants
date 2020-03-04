@@ -18,12 +18,12 @@ const PlantForm = ({history}) => {
         console.log(add);
     };
 
-    const addPlant = () => {
+    const addPlant = (newPlant) => {
         axiosWithAuth()
-        .post(`/users/${id}/plants`, add)
+        .post(`/users/${id}/plants`, newPlant)
         .then(res => {
-            setAdd(res.data);
-            history.pushState('/users/${id}/plants');
+            console.log('plant form add: ', res.data)
+            history.push(`/users/${id}/plants`);
         })
         .catch(err => console.log(err))
     };
