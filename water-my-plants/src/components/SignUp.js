@@ -3,15 +3,24 @@ import { useForm } from 'react-hook-form';
 import styled from 'styled-components';
 import Button from '@material-ui/core/Button';
 import axiosWithAuth from '../utils/axiosWithAuth';
+import plant from '../img/transparentplant.png';
 
 const Main1 = styled.div `
   background: #608EFF;  
   font-family: 'Montserrat';
   height: 100vh;
   
-  `
+`
+const Header1 = styled.div `
+display: flex;
+justify-content: space-between;
+border-bottom: 1px solid black;
+align-items: center;
+margin-bottom: 3rem;
+`
 
-  const Signup = props => {
+
+const Signup = props => {
   
   const { register, handleSubmit, errors } = useForm();
   const onSubmit = data => console.log(data);
@@ -71,12 +80,16 @@ const signUp = e => {
       
     <Main1>
     <form className = "forms" onSubmit={signUp}>
-      <h1 className = "title">Create an Account!</h1>
+      <Header1 className="header">
+        <img src={plant}/>
+        <h1 className = "title">Create an Account!</h1>
+      </Header1>
+      
       <input className = "each" type="text" placeholder="username" name="username" onChange={handleUserName} 
-      ref={register({required: true, maxLength: 80})} 
+      ref={register({required: true, maxLength: 15})} 
       />
       <input className = "each" type="password" placeholder="password" name="password" onChange={handlePassword} 
-      ref={register({required: true, maxLength: 100})} 
+      ref={register({required: true, maxLength: 15})} 
       />
       <input className = "each" type="email" placeholder="Email" name="Email" onChange={handleEmail} 
       ref={register({required: true, pattern: /^\S+@\S+$/i})} 
@@ -90,7 +103,7 @@ const signUp = e => {
      
      
      
-      <Button variant="contained" color="primary" onClick = {signUp} type="submit">Submit</Button>
+      <Button variant="contained" color="primary" type="submit" onClick={signUp}> Submit </Button>
     </form>
     </Main1>
   );
