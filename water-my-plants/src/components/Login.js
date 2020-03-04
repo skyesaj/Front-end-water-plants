@@ -15,6 +15,7 @@ import * as Yup from 'yup';
       username: '',
       password: ''
   })
+  const [userId, setUserId] = useState()
 
   const { register, handleSubmit, errors } = useForm();
 //   const onSubmit = data => console.log(data);
@@ -49,18 +50,19 @@ import * as Yup from 'yup';
           console.log('login response: ', res)
         localStorage.setItem("token", res.data.token);
         localStorage.setItem('id', JSON.stringify(res.data.user_id))
-         props.history.push(`/users/${res.data.user_id}/plants`);
+        // setUserId(res.data.user_id)
+         setTimeout(() => props.history.push(`/users/${res.data.user_id}/plants`), 2000);
 
          let welcomeMessage = res.data.message;
          console.log('welcome message', welcomeMessage)
-         axiosWithAuth()
-        .get("/users")
-          .then(res => {
-           let user = res.data.filter(user=>welcomeMessage.includes(user.username))
-           console.log('login props', props);
-           props.history.push(`/users/${user[-4].id}/plants`)
-         })
-          .catch(err => console.log(err))
+        //  axiosWithAuth()
+        // .get("/users")
+        //   .then(res => {
+        //    let user = res.data.filter(user=>welcomeMessage.includes(user.username))
+        //    console.log('login props', props);
+        //    props.history.push(`/users/${userId}/plants`)
+        //  })
+        //   .catch(err => console.log(err))
       })
       .catch(err => console.log(err));
   };

@@ -24,7 +24,7 @@ function App() {
       <Switch>
         <ProtectedRoute path='/protected'  component={Plants}/>
         <ProtectedRoute path='/users/:id/plants' component={Plants} />
-        <Route exact path='/plantform' component={PlantForm}/>
+        <Route exact path='/users/:id/plantform' component={PlantForm}/>
         <ProtectedRoute exact path='plantcard' component={PlantCard} />
         <Route path='/update-plant/:id' component={UpdatePlantForm} />
         <Route path="/register" component={Signup}/>
