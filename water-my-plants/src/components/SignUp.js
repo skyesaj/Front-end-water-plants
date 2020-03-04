@@ -114,22 +114,26 @@ const signUp = e => {
       <input className = "each" type="text" placeholder="username" name="username" onChange={handleUserName} 
       ref={register({required: true, maxLength: 15})} 
       />
+      {errors.username && 'username is required'}
       <input className = "each" type="password" placeholder="password" name="password" onChange={handlePassword} 
       ref={register({required: true, maxLength: 15})} 
       />
-      <input className = "each" type="email" placeholder="Email" name="Email" onChange={handleEmail} 
+      {errors.password && 'password is required'}
+      <input className = "each" type="email" placeholder="Email" name="email" onChange={handleEmail} 
       ref={register({required: true, pattern: /^\S+@\S+$/i})} 
       />
+      {errors.email && 'Please enter a valid Email address'}
       <input className = "each" type="tel" placeholder="Mobile number" name="phone_number" onChange={handleNumber} 
-      ref={register({required: true, minLength: 6, maxLength: 12})} 
+      ref={register({required: true, maxLength: 12})} 
       />
+      {errors.phone_number && 'Phone number is required'}
       
 
        
      
      
      
-      <Button variant="contained" color="primary" type="submit" onClick={signUp}> Submit </Button>
+      <Button size="large" variant="contained" color="primary" type="submit" onClick={signUp}> Submit </Button>
     </form>
     </Main1>
   );

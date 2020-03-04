@@ -4,7 +4,7 @@ import PlantCard from './PlantCard';
 
 const ListPlants = (props) => {
     const plants = useContext(PlantContext);
-    console.log("plants from plantContext: ", plants );
+    console.log("plants from plantContext: ", [plants] );
     
     return(
         <div className = 'plant-page'>

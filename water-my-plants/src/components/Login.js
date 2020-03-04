@@ -102,7 +102,7 @@ import plant from '../img/transparentplant.png';
     >
       <Header1 className="header">
         <img src={plant}/>
-        <h1 className = "title">Create an Account!</h1>
+        <h1 className = "title">Login!</h1>
       </Header1>
       <input className = "each" type="text" placeholder="username" name="username" onChange={handleUserName} 
       ref={register({required: true, maxLength: 10})} 
@@ -113,7 +113,7 @@ import plant from '../img/transparentplant.png';
      
 
      
-      <Button variant="contained" color="primary" type="submit" onClick={login}> Log In </Button>
+      <Button size="large" variant="contained" color="primary" type="submit" onClick={login}> Log In </Button>
     </form>
     </Main>
   );
