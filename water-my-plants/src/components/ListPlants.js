@@ -8,14 +8,14 @@ const ListPlants = (props) => {
     
     return(
         <div className = 'plant-page'>
-            {/* {
-            // plants || 
+            {
+            plants && 
             plants.map(flower =>{
                 return(
 
                     <PlantCard history={props.history} key={flower.id} id={props.id} setPlants={props.setPlants} plants={flower} />)}
                 )
-            }  */}
+            } 
         </div>
     )
 }

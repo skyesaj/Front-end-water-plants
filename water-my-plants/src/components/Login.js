@@ -32,7 +32,7 @@ import plant from '../img/transparentplant.png';
 
   const { register, handleSubmit, errors } = useForm();
 //   const onSubmit = data => console.log(data);
-  console.log(errors);
+//   console.log(errors);
 
   const handleUserName = e => {
       setUser({...user, username: e.target.value});
