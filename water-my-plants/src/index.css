@@ -18,8 +18,22 @@ code {
   flex-direction: column;
   text-align: center;
   align-items: center;
+  
+}
+.title {
+  font-size: 4rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  
+  color: white;
+}
+.each {
+  margin-bottom: 3rem;
+  width: 20rem;
+  height: 3rem;
+  border: solid 3px lightgreen;
 }
 
-.each {
-  margin-bottom: 1rem;
+.header {
+  display: flex;
 }

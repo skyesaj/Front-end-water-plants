@@ -2,7 +2,11 @@ import React, { useState } from "react";
 import { useForm } from 'react-hook-form';
 import axiosWithAuth from '../utils/axiosWithAuth';
 import styled from 'styled-components';
-import * as Yup from 'yup';
+import Button from '@material-ui/core/Button';
+import { makeStyles } from '@material-ui/core/styles';
+import plant from '../img/transparentplant.png';
+
+
 
  const Main = styled.div `
   background: #608EFF;  
@@ -10,6 +14,15 @@ import * as Yup from 'yup';
   height: 100vh;
   
   `
+
+  const Header1 = styled.div `
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid black;
+  align-items: center;
+  margin-bottom: 3rem;
+`
+
   const Login = (props) => {
   const [user, setUser] = useState({
       username: '',
@@ -28,6 +41,16 @@ import * as Yup from 'yup';
   const handlePassword = e => {
       setUser({...user, password: e.target.value})
   }
+
+  const useStyles = makeStyles(theme => ({
+    root: {
+      '& > *': {
+        margin: theme.spacing(1),
+        width: 200,
+      },
+    },
+  }));
+  const classes = useStyles();
 
 //   const login = e => {
 //       e.preventDefault();
@@ -77,7 +100,10 @@ import * as Yup from 'yup';
     onSubmit={login}
     // onSubmit={handleSubmit(login)}
     >
-      <h1>Log In!</h1>
+      <Header1 className="header">
+        <img src={plant}/>
+        <h1 className = "title">Create an Account!</h1>
+      </Header1>
       <input className = "each" type="text" placeholder="username" name="username" onChange={handleUserName} 
       ref={register({required: true, maxLength: 10})} 
       />
@@ -87,10 +113,37 @@ import * as Yup from 'yup';
      
 
      
-      <input type="submit" />
+      <Button variant="contained" color="primary" type="submit" onClick={login}> Log In </Button>
     </form>
     </Main>
   );
 }
 
 export default Login;
+
+
+// From Arash Haji-Hassanzadeh to Everyone:  12:17 PM
+// login = e => {
+//     e.preventDefault();
+    
+//     axiosWithAuth()
+//       .post(
+//         "/auth/register”,
+//         this.state.credentials
+//       )
+//       .then(res => {
+//           console.log(res)
+//         localStorage.setItem("token", res.data.token);
+//          this.props.history.push("/plants");
+
+//          let welcomeMessage = res.data.message;
+//          axiosWithAuth().get("/users")
+//           .then(res => {
+//            let user = res.data.filter(user=>welcomeMessage.includes(user.username))
+//            console.log('login props', this.props);
+//            this.props.history.push(`/users/${user[0].id}/plants`)
+//          })
+//           .catch(err => console.log(err))
+//       })
+//       .catch(err => console.log(err));
+//   };
