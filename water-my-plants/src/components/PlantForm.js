@@ -5,6 +5,7 @@ import styled from "styled-components";
 import Button from '@material-ui/core/Button';
 import plant from '../img/transparentplant.png';
 
+
 const PlantContainer = styled.div `
   background: #608EFF;  
   font-family: 'Montserrat';
@@ -64,7 +65,7 @@ const PlantForm = ({history}) => {
                 <input className="each" type='text' name='species' id='species' placeholder="species" value={add.species} onChange={handleChange}/>
                 
                 <input className="each" type='text' name='water_schedule' id='watering' placeholder="watering schedule" value={add.water_schedule} onChange={handleChange}/>
-                <Button variant="contained" color="primary" type="submit" onClick={handleSubmit}>Add New Plant</Button>
+                <Button size="large" variant="contained" color="primary" type="submit" onClick={handleSubmit}>Add New Plant</Button>
             </form>
         </PlantContainer>
     )

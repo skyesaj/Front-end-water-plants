@@ -113,7 +113,7 @@ import plant from '../img/transparentplant.png';
      
 
      
-      <Button variant="contained" color="primary" type="submit" onClick={login}> Log In </Button>
+      <Button size="large" variant="contained" color="primary" type="submit" onClick={login}> Log In </Button>
     </form>
     </Main>
   );
