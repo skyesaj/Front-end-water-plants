@@ -29,7 +29,10 @@ const Navigation = props => {
     <div>
       <Navbar color="light" light expand="md">
         <img className="logo-img" src={logo} />
-        <NavbarBrand className="WMP-text" href="/">
+        <NavbarBrand
+          className="WMP-text"
+          href="https://build-week-water-my-plants3.github.io/marketing/index.html"
+        >
           Water My Plants
         </NavbarBrand>
         <NavbarToggler onClick={toggle} />

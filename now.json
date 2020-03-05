@@ -3,7 +3,7 @@
   "name": "water-my-plants",
   "builds": [
     {
-      "src": "water-my-plants/package.json",
+      "src": " water-my-plants/package.json",
       "use": "@now/static-build",
       "config": { "distDir": "build" }
     }
