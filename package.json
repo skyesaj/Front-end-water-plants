@@ -1,8 +1,0 @@
-{
-  "dependencies": {
-    "@material-ui/core": "^4.9.5",
-    "react-hook-form": "^4.10.1",
-    "styled-components": "^5.0.1",
-    "yup": "^0.28.1"
-  }
-}

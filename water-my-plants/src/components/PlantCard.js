@@ -72,7 +72,7 @@ const PlantCard = props => {
           >
             Delete
           </Button>
-          <Link to={`/update-plant/${props.plants.id}`}>
+          <Link to={`/update-plant/${props.plants.plantId}`}>
             <Button
               variant="contained"
               color="primary"
