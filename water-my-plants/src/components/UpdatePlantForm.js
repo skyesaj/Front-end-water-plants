@@ -25,11 +25,11 @@ const UpdatePlantForm = ({
 }) => {
   const [plantData, newPlantData] = useState({
     nickname: "",
-    species_id: "",
+    species_name: "",
     frequency: "",
     photo: ""
   });
-  console.log(id);
+  // console.log(id);
   const newId = localStorage.getItem("id");
 
   const handleChange = e => {
@@ -52,7 +52,7 @@ const UpdatePlantForm = ({
 
     const formData = new FormData();
     formData.append("nickname", plantData.nickname);
-    formData.append("species_id", plantData.species_id);
+    formData.append("species_name", plantData.species_name);
     formData.append("frequency", plantData.frequency);
     formData.append("photo", plantData.photo);
     const config = {
@@ -94,9 +94,9 @@ const UpdatePlantForm = ({
         <label htmlFor="species">Species:</label>
         <input
           id="species"
-          name="species_id"
+          name="species_name"
           className="each"
-          value={plantData.species_id}
+          value={plantData.species_name}
           onChange={handleChange}
         />
         <label htmlFor="species">Watering Schedule: YYYY-MM-DD HH:MM</label>

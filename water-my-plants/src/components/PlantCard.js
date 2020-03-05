@@ -34,6 +34,7 @@ const useStyles = makeStyles({
   }
 });
 const PlantCard = props => {
+  console.log(props.plants);
   const classes = useStyles();
   const id = localStorage.getItem("id");
   const deletePlant = () => {
@@ -59,7 +60,7 @@ const PlantCard = props => {
             src={props.plants.photo ? props.plants.photo : plant2}
           />
           <Typography className={classes.pos} color="textSecondary">
-            Plant Species: {props.plants.species}
+            Plant Species: {props.plants.species_name}
           </Typography>
           <Typography variant="body2" component="p">
             Watering Schedule: {props.plants.frequency}

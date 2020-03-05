@@ -21,7 +21,7 @@ const PlantForm = ({ history }) => {
   const id = localStorage.getItem("id");
   const [add, setAdd] = useState({
     nickname: "",
-    species_id: "",
+    species_name: "",
     frequency: "",
     photo: ""
   });
@@ -40,7 +40,7 @@ const PlantForm = ({ history }) => {
   const addPlant = () => {
     const formData = new FormData();
     formData.append("nickname", add.nickname);
-    formData.append("species_id", add.species_id);
+    formData.append("species_name", add.species_name);
     formData.append("frequency", add.frequency);
     formData.append("photo", add.photo);
     const config = {
@@ -56,6 +56,7 @@ const PlantForm = ({ history }) => {
         config
       )
       .then(res => {
+        console.log(res);
         history.push(`/users/${id}/plants`);
       })
       .catch(err => console.log(err));
@@ -83,10 +84,10 @@ const PlantForm = ({ history }) => {
         <input
           className="each"
           type="text"
-          name="species_id"
+          name="species_name"
           id="species"
           placeholder="species"
-          value={add.species_id}
+          value={add.species_name}
           onChange={handleChange}
         />
         <input
