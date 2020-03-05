@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
+import logo from '../img/logo-earth.svg';
 import {
   Collapse,
   Navbar,
@@ -27,7 +28,8 @@ const Navigation = (props) => {
   return (
     <div>
       <Navbar color="light" light expand="md">
-        <NavbarBrand href="/">Water My Plants</NavbarBrand>
+        <img className='logo-img' src={logo}/>
+        <NavbarBrand className='WMP-text' href="/">Water My Plants</NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar>
@@ -54,7 +56,7 @@ const Navigation = (props) => {
               </DropdownMenu>
             </UncontrolledDropdown>
           </Nav>
-          <NavbarText>Always Reminding You To Water Your Plants!</NavbarText>
+          <NavbarText className='WMP-text'>Always Reminding You To Water Your Plants!</NavbarText>
         </Collapse>
       </Navbar>
     </div>
