@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { useParams } from 'react-router-dom';
-import logo from '../img/logo-earth.svg';
+import React, { useState } from "react";
+import { useParams } from "react-router-dom";
+import logo from "../img/logo-earth.svg";
 import {
   Collapse,
   Navbar,
@@ -14,22 +14,24 @@ import {
   DropdownMenu,
   DropdownItem,
   NavbarText
-} from 'reactstrap';
+} from "reactstrap";
 
-const Navigation = (props) => {
+const Navigation = props => {
   const { id } = useParams();
   const [isOpen, setIsOpen] = useState(false);
 
   const toggle = () => setIsOpen(!isOpen);
 
-  const newId = localStorage.getItem('id')
-  console.log('this is the id from local storage', newId);
+  const newId = localStorage.getItem("id");
+  console.log("this is the id from local storage", newId);
 
   return (
     <div>
       <Navbar color="light" light expand="md">
-        <img className='logo-img' src={logo}/>
-        <NavbarBrand className='WMP-text' href="/">Water My Plants</NavbarBrand>
+        <img className="logo-img" src={logo} />
+        <NavbarBrand className="WMP-text" href="/">
+          Water My Plants
+        </NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar>
@@ -37,13 +39,10 @@ const Navigation = (props) => {
               <NavLink href="/login">Login</NavLink>
             </NavItem>
             <NavItem>
-              
-
               <NavLink href="/register">Sign Up</NavLink>
-
             </NavItem>
             <UncontrolledDropdown nav inNavbar>
-              <DropdownToggle nav caret >
+              <DropdownToggle nav caret>
                 My Plants
               </DropdownToggle>
               <DropdownMenu right>
@@ -55,12 +54,24 @@ const Navigation = (props) => {
                 </DropdownItem>
               </DropdownMenu>
             </UncontrolledDropdown>
+            <NavLink
+              href="https://build-week-water-my-plants3.github.io/marketing/index.html"
+              onClick={() => {
+                localStorage.removeItem("token");
+                localStorage.removeItem("id");
+                window.location.reload();
+              }}
+            >
+              Logout
+            </NavLink>
           </Nav>
-          <NavbarText className='WMP-text'>Always Reminding You To Water Your Plants!</NavbarText>
+          <NavbarText className="WMP-text">
+            Always Reminding You To Water Your Plants!
+          </NavbarText>
         </Collapse>
       </Navbar>
     </div>
   );
-}
+};
 
 export default Navigation;
