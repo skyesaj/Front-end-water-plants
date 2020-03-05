@@ -4,7 +4,8 @@ import axiosWithAuth from '../utils/axiosWithAuth';
 import styled from 'styled-components';
 import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
-import plant from '../img/transparentplant.png';
+import anotherplant from '../img/logo-earth.svg';
+import * as Yup from "yup";
 
 
 
@@ -101,7 +102,7 @@ import plant from '../img/transparentplant.png';
     // onSubmit={handleSubmit(login)}
     >
       <Header1 className="header">
-        <img src={plant}/>
+        <img className="newplant" src={anotherplant}/>
         <h1 className = "title">Login!</h1>
       </Header1>
       <input className = "each" type="text" placeholder="username" name="username" onChange={handleUserName} 

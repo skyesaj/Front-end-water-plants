@@ -1,5 +1,22 @@
 import React, { useState } from 'react';
 import axiosWithAuth from '../utils/axiosWithAuth';
+import anotherplant from '../img/logo-earth.svg';
+import styled from 'styled-components';
+import Button from '@material-ui/core/Button';
+
+const Main1 = styled.div `
+  background: #608EFF;  
+  font-family: 'Montserrat';
+  height: 100vh;
+  
+`
+const Header1 = styled.div `
+display: flex;
+justify-content: space-between;
+border-bottom: 1px solid black;
+align-items: center;
+margin-bottom: 3rem;
+`
 
 const UpdatePlantForm = ({ history,
     match: {
@@ -37,14 +54,19 @@ const UpdatePlantForm = ({ history,
 
 
     return (
-        <div className='update'>
-            <form onSubmit={handleSubmit}>
+        <Main1 className='update'>
+            <form className="forms" onSubmit={handleSubmit}>
+            <Header1 className="header">
+                <img className="newplant" src={anotherplant}/>
+                <h1 className="title">Edit your Plant!</h1>
+            </Header1>
                 <label htmlFor='nickname'>
                     NickName: 
                 </label>
                 <input
                 id='nickname'
                 name="nickname"
+                className="each"
                 value={plantData.nickname}
                 onChange={handleChange}
                 />
@@ -54,6 +76,7 @@ const UpdatePlantForm = ({ history,
                 <input
                 id='species'
                 name='species'
+                className="each"
                 value={plantData.species}
                 onChange={handleChange}
                 />
@@ -63,12 +86,13 @@ const UpdatePlantForm = ({ history,
                 <input
                 id='water_schedule'
                 name='water_schedule'
+                className="each"
                 value={plantData.water_schedule}
                 onChange={handleChange}
                 />
-                <button>Edit Plant</button>
+                <Button size="large" variant="contained" color="primary" type="submit">Submit</Button>
             </form>
-        </div>
+        </Main1>
     )
 }
 
