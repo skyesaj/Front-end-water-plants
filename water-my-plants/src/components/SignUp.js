@@ -75,7 +75,7 @@ const Signup = props => {
         setTimeout(
           () =>
             props.history.push(
-              "/login"
+              "/"
               //  `/users/${res.data.user_id}/plants`
             ),
           2000
