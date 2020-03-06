@@ -144,7 +144,7 @@ const Signup = props => {
               <p className="errors">{errors.password}</p>
             )} */}
 
-        <button type="submit" />
+        <input type="submit" />
         {/* <Button size="large" variant="contained" color="primary" type="submit" onClick={signUp}> Submit </Button> */}
       </form>
     </Main1>
