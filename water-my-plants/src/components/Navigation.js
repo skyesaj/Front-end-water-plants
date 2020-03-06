@@ -39,7 +39,7 @@ const Navigation = props => {
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar>
             <NavItem>
-              <NavLink href="/login">Login</NavLink>
+              <NavLink href="/">Login</NavLink>
             </NavItem>
             <NavItem>
               <NavLink href="/register">Sign Up</NavLink>
