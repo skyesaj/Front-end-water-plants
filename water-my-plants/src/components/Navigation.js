@@ -31,7 +31,7 @@ const Navigation = props => {
         <img className="logo-img" src={logo} />
         <NavbarBrand
           className="WMP-text"
-          href="https://build-week-water-my-plants3.github.io/marketing/index.html"
+          href="https://marketing-plants-fpjucv7k5.now.sh/"
         >
           Water My Plants
         </NavbarBrand>
@@ -58,7 +58,7 @@ const Navigation = props => {
               </DropdownMenu>
             </UncontrolledDropdown>
             <NavLink
-              href="https://build-week-water-my-plants3.github.io/marketing/index.html"
+              href="https://marketing-plants-fpjucv7k5.now.sh/"
               onClick={() => {
                 localStorage.removeItem("token");
                 localStorage.removeItem("id");
